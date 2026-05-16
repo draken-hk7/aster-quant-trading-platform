@@ -1,0 +1,25 @@
+groups:
+  - name: aster-trading-alerts
+    rules:
+      - alert: BackendDown
+        expr: up{job="aster-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Aster backend is unavailable
+      - alert: MarketDataLag
+        expr: aster_market_data_lag_seconds > 3
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: Market data lag exceeded threshold
+      - alert: KillSwitchActive
+        expr: aster_kill_switch_enabled == 1
+        for: 0s
+        labels:
+          severity: critical
+        annotations:
+          summary: Trading kill switch is active
+

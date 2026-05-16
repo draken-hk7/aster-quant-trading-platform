@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #07090d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(31, 89, 107, 0.18), transparent 35%),
+    linear-gradient(45deg, rgba(96, 35, 68, 0.16), transparent 40%),
+    #07090d;
+  color: #e6edf5;
+}
+
+body {
+  overflow: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.terminal-grid {
+  grid-template-columns: minmax(260px, 0.75fr) minmax(520px, 1.65fr) minmax(340px, 1fr);
+  grid-template-rows: 44px minmax(320px, 1.4fr) minmax(220px, 0.9fr);
+}
+
+.panel {
+  border: 1px solid rgba(180, 194, 210, 0.16);
+  background: rgba(13, 18, 24, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.22);
+}
+
+.mono-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 168, 188, 0.24);
+  border-radius: 999px;
+}
+
